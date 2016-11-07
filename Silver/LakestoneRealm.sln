@@ -1,0 +1,30 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# RemObjects Fire
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "LakestoneRealm.Shared", "LakestoneRealm.Shared\LakestoneRealm.Shared.elements", "{BB72378C-A17C-44F0-A469-95195B3449F2}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "LakestoneRealm.Tests", "LakestoneRealm.Tests\LakestoneRealm.Tests.elements", "{F091537D-2EF1-4B99-87F2-5B1428742C9C}"
+EndProject
+Project("{656346D9-4656-40DA-A068-22D5425D4639}") = "lakestonerealm.android", "LakestoneRealm.Android\LakestoneRealm.Android.elements", "{15AECE9E-1BA2-4D2B-A273-42173A94D881}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|AnyCPU = Release|AnyCPU
+		Debug|AnyCPU = Debug|AnyCPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB72378C-A17C-44F0-A469-95195B3449F2}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{BB72378C-A17C-44F0-A469-95195B3449F2}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{F091537D-2EF1-4B99-87F2-5B1428742C9C}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{F091537D-2EF1-4B99-87F2-5B1428742C9C}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{F091537D-2EF1-4B99-87F2-5B1428742C9C}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{F091537D-2EF1-4B99-87F2-5B1428742C9C}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+		{15AECE9E-1BA2-4D2B-A273-42173A94D881}.Release|AnyCPU.ActiveCfg = Release|AnyCPU
+		{15AECE9E-1BA2-4D2B-A273-42173A94D881}.Release|AnyCPU.Build.0 = Release|AnyCPU
+		{15AECE9E-1BA2-4D2B-A273-42173A94D881}.Debug|AnyCPU.ActiveCfg = Debug|AnyCPU
+		{15AECE9E-1BA2-4D2B-A273-42173A94D881}.Debug|AnyCPU.Build.0 = Debug|AnyCPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

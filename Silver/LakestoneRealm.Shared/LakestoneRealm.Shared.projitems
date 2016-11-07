@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+        <HasSharedItems>true</HasSharedItems>
+        <SharedGUID>BB72378C-A17C-44F0-A469-95195B3449F2</SharedGUID>
+    </PropertyGroup>
+    <PropertyGroup Label="Configuration">
+        <Import_RootNamespace>LakestoneRealm.Shared</Import_RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\Sources\alliases.swift">
+            <VirtualFolder>Sources</VirtualFolder>
+        </Compile>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\Sources\extension_Results.swift">
+            <VirtualFolder>Sources</VirtualFolder>
+        </Compile>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\Sources\extension_Realm.swift">
+            <VirtualFolder>Sources</VirtualFolder>
+        </Compile>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\Sources\extension_Query.swift">
+            <VirtualFolder>Sources</VirtualFolder>
+        </Compile>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\Sources\extension_List.swift">
+            <VirtualFolder>Sources</VirtualFolder>
+        </Compile>
+        <Compile Include="$(MSBuildThisFileDirectory)..\..\Sources\extension_Object.swift">
+            <VirtualFolder>Sources</VirtualFolder>
+        </Compile>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Sources">
+            <Virtual>True</Virtual>
+        </Folder>
+    </ItemGroup>
+</Project>
