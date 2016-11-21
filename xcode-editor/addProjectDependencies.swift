@@ -7,6 +7,7 @@ let swiftVersionString = "3.0.1"
 let targetProjectPath = "LakestoneRealm.xcodeproj"
 let iosDeploymentTarget = "8.0"
 let targetsToBeModifiedNameContains = ["geoBingAnKit", "LakestoneRealm"]
+let dependenciesBundleVersion = "1"
 
 let realmSwiftDirectoryPath = "$(SRCROOT)/realm-swift"
 
@@ -15,6 +16,8 @@ let otherLinkerFlagsConfKey = "OTHER_LDFLAGS"
 let runtimePathFlagsConfKey = "LD_RUNPATH_SEARCH_PATHS"
 let iOSDeploymentTargetConfKey = "IPHONEOS_DEPLOYMENT_TARGET"
 let supportedPlatformsTargetConfKey = "SUPPORTED_PLATFORMS"
+let skipInstallConfKey = "SKIP_INSTALL"
+let swiftVersionConfKey = "SWIFT_VERSION"
 
 enum Platform: String {
     case ios
@@ -55,6 +58,24 @@ guard let lakestoneRealmProject = XCProject(filePath: targetProjectPath) else {
     exit(1)
 }
 
+// global configs additions for all targets
+for target in lakestoneRealmProject.targets() {
+    for (_, configuration) in target.configurations() {
+        
+        let supportedPlatforms = SDKComponent.allSDKs.map { $0.rawValue }
+        configuration.addOrReplaceSetting(supportedPlatforms as NSArray, forKey: supportedPlatformsTargetConfKey)
+        configuration.addOrReplaceSetting(iosDeploymentTarget as NSString, forKey: iOSDeploymentTargetConfKey)
+        configuration.addOrReplaceSetting("YES" as NSString, forKey: skipInstallConfKey)
+        configuration.addOrReplaceSetting(swiftVersionString as NSString, forKey: swiftVersionConfKey)
+        
+        // sets current linker flags to mac-osx only
+        if let linkerFlags = configuration.value(forKey: otherLinkerFlagsConfKey) as? NSArray {
+            configuration.addOrReplaceSetting("$(inherited)" as NSString, forKey: otherLinkerFlagsConfKey)
+            configuration.addOrReplaceSetting(linkerFlags, forKey: "\(otherLinkerFlagsConfKey)\(SDKComponent.macosx.configurationSuffix)")
+        }
+    }
+}
+
 let realmTargets = lakestoneRealmProject.targets().filter {
     for contained in targetsToBeModifiedNameContains {
         if $0.name.contains(contained) {
@@ -90,14 +111,25 @@ for realmTarget in realmTargets {
     }
 }
 
-// global configs additions for all targets
-for target in lakestoneRealmProject.targets() {
-    for (_, configuration) in target.configurations() {
-        
-        let supportedPlatforms = SDKComponent.allSDKs.map { $0.rawValue }
-        configuration.addOrReplaceSetting(supportedPlatforms as NSArray, forKey: supportedPlatformsTargetConfKey)
-        configuration.addOrReplaceSetting(iosDeploymentTarget as NSString, forKey: iOSDeploymentTargetConfKey)
-    }
+lakestoneRealmProject.save()
+
+// changing to explicit CFBundleVersion
+guard let names = try? FileManager.default.contentsOfDirectory(atPath: targetProjectPath) else {
+    print("Couldn't locate project at path: \(targetProjectPath)")
+    exit(1)
 }
 
-lakestoneRealmProject.save()
+let plistFiles = names.filter { $0.hasSuffix(".plist") }
+var totalModified = 0
+for plistFile in plistFiles {
+    guard let plistDict = NSMutableDictionary(contentsOfFile: (targetProjectPath as NSString).appendingPathComponent(plistFile)) else {
+        print("Couldn't create a dictionary from a file at path: \(plistFile)")
+        continue
+    }
+    
+    plistDict.setObject(dependenciesBundleVersion, forKey: "CFBundleVersion" as NSString)
+    plistDict.write(toFile: (targetProjectPath as NSString).appendingPathComponent(plistFile), atomically: true)
+    totalModified += 1
+}
+
+print("Modified \(totalModified) plists inside \((targetProjectPath as NSString).lastPathComponent)")
