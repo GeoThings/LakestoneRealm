@@ -91,12 +91,12 @@ extension Realm {
         return object
     }
     
-    public func copyToRealm<S : Sequence where S.Iterator.Element : Object>(_ objects: S) -> S {
+    public func copyToRealm<S : Sequence>(_ objects: S) -> S where S.Iterator.Element : Object {
         self.add(objects, update: false)
         return objects
     }
     
-    public func copyToRealmOrUpdate<S : Sequence where S.Iterator.Element : Object>(_ objects: S) -> S {
+    public func copyToRealmOrUpdate<S : Sequence>(_ objects: S) -> S where S.Iterator.Element : Object {
         self.add(objects, update: true)
         return objects
     }

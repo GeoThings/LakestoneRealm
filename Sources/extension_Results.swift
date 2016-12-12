@@ -29,7 +29,7 @@ extension Results {
     public func allSorted(byField field: String, ascending: Bool = true) -> Results<T> {
         return self.sorted(byProperty: field, ascending: ascending)
     }
-	
+    
 	#if COOPER
 	public var count: Int {
 		return self.size()
