@@ -1,136 +1,136 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
-    <PropertyGroup>
-        <ProductVersion>3.5</ProductVersion>
-        <ProjectGuid>F091537D-2EF1-4B99-87F2-5B1428742C9C</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
-        <AllowLegacyCreate>False</AllowLegacyCreate>
-        <AllowLegacyOutParams>False</AllowLegacyOutParams>
-        <Name>LakestoneRealm.Tests</Name>
-        <RootNamespace>lakestonerealm.tests</RootNamespace>
-        <AssemblyName>LakestoneRealm.Tests</AssemblyName>
-        <MinFrameworkVersionRequired>4.0</MinFrameworkVersionRequired>
-        <AndroidNativeLibrariesFolder>..\libs\realm-android-library\2.0.2\jni\</AndroidNativeLibrariesFolder>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-        <Optimize>false</Optimize>
-        <OutputPath>.\bin\Debug</OutputPath>
-        <DefineConstants>DEBUG;TRACE;</DefineConstants>
-        <GenerateDebugInfo>True</GenerateDebugInfo>
-        <EnableAsserts>True</EnableAsserts>
-        <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-        <CaptureConsoleOutput>False</CaptureConsoleOutput>
-        <StartMode>Project</StartMode>
-        <RegisterForComInterop>False</RegisterForComInterop>
-        <CpuType>anycpu</CpuType>
-        <RuntimeVersion>v25</RuntimeVersion>
-        <XmlDoc>False</XmlDoc>
-        <XmlDocWarningLevel>WarningOnPublicMembers</XmlDocWarningLevel>
-        <WarnOnCaseMismatch>True</WarnOnCaseMismatch>
-        <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
-        <AndroidDexMode>Incremental</AndroidDexMode>
-        <AndroidNativeLibrariesFolder>..\libs\realm-android-library\2.0.2\jni\</AndroidNativeLibrariesFolder>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-        <Optimize>true</Optimize>
-        <OutputPath>.\bin\Release</OutputPath>
-        <GenerateDebugInfo>False</GenerateDebugInfo>
-        <EnableAsserts>False</EnableAsserts>
-        <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
-        <CaptureConsoleOutput>False</CaptureConsoleOutput>
-        <StartMode>Project</StartMode>
-        <RegisterForComInterop>False</RegisterForComInterop>
-        <CpuType>anycpu</CpuType>
-        <RuntimeVersion>v25</RuntimeVersion>
-        <XmlDoc>False</XmlDoc>
-        <XmlDocWarningLevel>WarningOnPublicMembers</XmlDocWarningLevel>
-        <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
-        <WarnOnCaseMismatch>True</WarnOnCaseMismatch>
-        <AndroidNativeLibrariesFolder>..\libs\realm-android-library\2.0.2\jni\</AndroidNativeLibrariesFolder>
-    </PropertyGroup>
-    <ItemGroup>
-        <Folder Include="Properties\"/>
-        <Folder Include="res\"/>
-        <Folder Include="res\values\"/>
-        <Folder Include="res\layout\"/>
-        <Folder Include="Tests">
-            <Virtual>True</Virtual>
-        </Folder>
-    </ItemGroup>
-    <ItemGroup>
-        <None Include="res\values\strings.android-xml">
-            <SubType>Content</SubType>
-        </None>
-        <None Include="res\layout\main.layout-xml">
-            <SubType>Content</SubType>
-        </None>
-        <None Include="res\drawable-hdpi\icon.png">
-            <SubType>Content</SubType>
-        </None>
-        <None Include="res\drawable-mdpi\icon.png">
-            <SubType>Content</SubType>
-        </None>
-        <None Include="res\drawable-ldpi\icon.png">
-            <SubType>Content</SubType>
-        </None>
-        <None Include="res\drawable-xhdpi\icon.png">
-            <SubType>Content</SubType>
-        </None>
-    </ItemGroup>
-    <ItemGroup>
-        <AndroidManifest Include="Properties\AndroidManifest.android-xml"/>
-    </ItemGroup>
-    <ItemGroup>
-        <Reference Include="android"/>
-        <Reference Include="cooper">
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="realmtest">
-            <HintPath>../libs/realmtest.jar</HintPath>
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="rxjava-1.0.0">
-            <HintPath>../libs/rxjava-1.0.0.jar</HintPath>
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="realm">
-            <HintPath>../libs/realm.jar</HintPath>
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="relinker">
-            <HintPath>../libs/relinker.jar</HintPath>
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="realm-annotations-2.0.2">
-            <HintPath>../libs/realm-annotations-2.0.2.jar</HintPath>
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="LakestoneCore.Android">
-            <HintPath>../libs/LakestoneCore.Android.jar</HintPath>
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="swift">
-            <HintPath>../libs/swift.jar</HintPath>
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="sugar">
-            <Private>True</Private>
-        </Reference>
-        <Reference Include="remobjects.elements.eunit">
-            <Private>True</Private>
-        </Reference>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="MainActivity.swift"/>
-        <Compile Include="LakestoneTestApplication.swift"/>
-        <Compile Include="..\..\Tests\LakestoneRealmTests\TestRealm.swift">
-            <VirtualFolder>Tests</VirtualFolder>
-        </Compile>
-        <Compile Include="..\..\Tests\LakestoneRealmTests\testUtilities.swift">
-            <VirtualFolder>Tests</VirtualFolder>
-        </Compile>
-    </ItemGroup>
-    <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Cooper.Android.targets"/>
-    <Import Project="..\LakestoneRealm.Shared\LakestoneRealm.Shared.projitems" Label="Shared"/>
+  <PropertyGroup>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>F091537D-2EF1-4B99-87F2-5B1428742C9C</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <AllowLegacyCreate>False</AllowLegacyCreate>
+    <AllowLegacyOutParams>False</AllowLegacyOutParams>
+    <Name>LakestoneRealm.Tests</Name>
+    <RootNamespace>lakestonerealm.tests</RootNamespace>
+    <AssemblyName>LakestoneRealm.Tests</AssemblyName>
+    <MinFrameworkVersionRequired>4.0</MinFrameworkVersionRequired>
+    <AndroidNativeLibrariesFolder>..\libs\realm-android-library\2.0.2\jni\</AndroidNativeLibrariesFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;</DefineConstants>
+    <GenerateDebugInfo>True</GenerateDebugInfo>
+    <EnableAsserts>True</EnableAsserts>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <CaptureConsoleOutput>False</CaptureConsoleOutput>
+    <StartMode>Project</StartMode>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <CpuType>anycpu</CpuType>
+    <RuntimeVersion>v25</RuntimeVersion>
+    <XmlDoc>False</XmlDoc>
+    <XmlDocWarningLevel>WarningOnPublicMembers</XmlDocWarningLevel>
+    <WarnOnCaseMismatch>True</WarnOnCaseMismatch>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+    <AndroidDexMode>Incremental</AndroidDexMode>
+    <AndroidNativeLibrariesFolder>..\libs\realm-android-library\2.0.2\jni\</AndroidNativeLibrariesFolder>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release</OutputPath>
+    <GenerateDebugInfo>False</GenerateDebugInfo>
+    <EnableAsserts>False</EnableAsserts>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <CaptureConsoleOutput>False</CaptureConsoleOutput>
+    <StartMode>Project</StartMode>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <CpuType>anycpu</CpuType>
+    <RuntimeVersion>v25</RuntimeVersion>
+    <XmlDoc>False</XmlDoc>
+    <XmlDocWarningLevel>WarningOnPublicMembers</XmlDocWarningLevel>
+    <EnableUnmanagedDebugging>False</EnableUnmanagedDebugging>
+    <WarnOnCaseMismatch>True</WarnOnCaseMismatch>
+    <AndroidNativeLibrariesFolder>..\libs\realm-android-library\2.0.2\jni\</AndroidNativeLibrariesFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+    <Folder Include="res\" />
+    <Folder Include="res\values\" />
+    <Folder Include="res\layout\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\values\strings.android-xml">
+      <SubType>Content</SubType>
+    </None>
+    <None Include="res\layout\main.layout-xml">
+      <SubType>Content</SubType>
+    </None>
+    <None Include="res\drawable-hdpi\icon.png">
+      <SubType>Content</SubType>
+    </None>
+    <None Include="res\drawable-mdpi\icon.png">
+      <SubType>Content</SubType>
+    </None>
+    <None Include="res\drawable-ldpi\icon.png">
+      <SubType>Content</SubType>
+    </None>
+    <None Include="res\drawable-xhdpi\icon.png">
+      <SubType>Content</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidManifest Include="Properties\AndroidManifest.android-xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="android" />
+    <Reference Include="cooper">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="realmtest">
+      <HintPath>..\libs\realmtest.jar</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="rxjava-1.0.0">
+      <HintPath>..\libs\rxjava-1.0.0.jar</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="realm">
+      <HintPath>..\libs\realm.jar</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="relinker">
+      <HintPath>..\libs\relinker.jar</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="realm-annotations-2.0.2">
+      <HintPath>..\libs\realm-annotations-2.0.2.jar</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LakestoneCore.Android">
+      <HintPath>..\libs\LakestoneCore.Android.jar</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="swift">
+      <HintPath>..\libs\swift.jar</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="sugar">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="remobjects.elements.eunit">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="elements">
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainActivity.swift" />
+    <Compile Include="LakestoneTestApplication.swift" />
+    <Compile Include="testUtilities.swift">
+      <VirtualFolder>Tests</VirtualFolder>
+    </Compile>
+    <Compile Include="..\..\Tests\TestRealm.swift">
+      <VirtualFolder>Tests</VirtualFolder>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\RemObjects Software\Elements\RemObjects.Elements.Cooper.Android.targets" />
+  <Import Project="..\LakestoneRealm.Shared\LakestoneRealm.Shared.projitems" Label="Shared" />
 </Project>

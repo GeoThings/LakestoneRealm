@@ -27,7 +27,7 @@ extension Results {
 	}
     
     public func allSorted(byField field: String, ascending: Bool = true) -> Results<T> {
-        return self.sorted(byProperty: field, ascending: ascending)
+        return self.sorted(byKeyPath: field, ascending: ascending)
     }
     
 	#if COOPER
