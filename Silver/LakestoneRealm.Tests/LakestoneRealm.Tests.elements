@@ -83,14 +83,6 @@
     <Reference Include="cooper">
       <Private>True</Private>
     </Reference>
-    <Reference Include="realmtest">
-      <HintPath>..\libs\realmtest.jar</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="rxjava-1.0.0">
-      <HintPath>..\libs\rxjava-1.0.0.jar</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="realm">
       <HintPath>..\libs\realm.jar</HintPath>
       <Private>True</Private>

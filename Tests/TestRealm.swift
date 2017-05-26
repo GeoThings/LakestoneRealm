@@ -22,24 +22,23 @@
 
 
 #if COOPER
-	
+
 	import remobjects.elements.eunit
 	import lakestonecore.android
 	import io.realm
-	import geothings.tw.realmtest
 #else
-	
+
 	import XCTest
 	import Foundation
 	import LakestoneCore
 	import RealmSwift
-	
+
 	@testable import LakestoneRealm
-	
+
 #endif
 
 public class TestRealm: Test {
-	
+
 	#if COOPER
 	override func Setup(){
 		super.Setup()
@@ -51,16 +50,15 @@ public class TestRealm: Test {
 		self.commonSetup()
 	}
 	#endif
-	
+
 	public func commonSetup() {
 	}
-	
-    #if COOPER
-    
+
+	#if COOPER
+
 	public func testRealm(){
 	}
-    
-    #endif
-	
-}
 
+	#endif
+
+}
