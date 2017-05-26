@@ -58,31 +58,6 @@ public class TestRealm: Test {
     #if COOPER
     
 	public func testRealm(){
-		
-        /*
-		let testClass = TestClass(MainActivity.currentInstance)
-		let realm = testClass.getCurrentRealm()
-		
-		let puppies = realm.objects(Dog.self).where(field: "age", lessThan: 2).all
-		print(puppies.count)
-		
-		var dog = Dog()
-		dog.setName("Rex")
-		dog.setAge(1)
-		
-		do {
-			
-			try realm.write {
-				let managedDog = realm.copyToRealm(dog)
-				dog = managedDog
-			}
-			
-			print(puppies.count)
-			
-		} catch {
-			Assert.Fail("\(error)")
-		}
-        */
 	}
     
     #endif
