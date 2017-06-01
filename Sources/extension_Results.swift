@@ -13,7 +13,6 @@
 #else
 	
 	import Foundation
-	import LakestoneCore
 	import RealmSwift
 	
 #endif
@@ -47,7 +46,11 @@ extension Results {
         return self.filter("\(field)!=nil")
     }
     
-    public func `where`(field: String, between lowerBound: AnyNumeric, upperBound: AnyNumeric) -> Results<T> {
+    public func `where`<K: Integer>(field: String, between lowerBound: K, upperBound: K) -> Results<T> {
+        return self.filter("\(field) >= \(lowerBound) AND \(field) <= \(upperBound)")
+    }
+    
+    public func `where`<K: FloatingPoint>(field: String, between lowerBound: K, upperBound: K) -> Results<T> {
         return self.filter("\(field) >= \(lowerBound) AND \(field) <= \(upperBound)")
     }
     
@@ -62,9 +65,13 @@ extension Results {
 		return self.filter("\(field) == \(boolValueString)")
 	}
 	
-	public func `where`(field: String, equalsTo numericValue: AnyNumeric) -> Results<T> {
+    public func `where`<K: Integer>(field: String, equalsTo numericValue: K) -> Results<T> {
 		return self.filter("\(field) == \(numericValue)")
 	}
+    
+    public func `where`<K: FloatingPoint>(field: String, equalsTo numericValue: K) -> Results<T> {
+        return self.filter("\(field) == \(numericValue)")
+    }
 	
 	public func `where`(field: String, equalsTo stringValue: String, caseSensitive: Bool = false) -> Results<T> {
 		
@@ -84,10 +91,14 @@ extension Results {
 		return self.filter("\(field) != \(boolValue)")
 	}
 	
-	public func `where`(field: String, notEqualTo numericValue: AnyNumeric) -> Results<T> {
+    public func `where`<K: Integer>(field: String, notEqualTo numericValue: K) -> Results<T> {
 		return self.filter("\(field) != \(numericValue)")
 	}
 	
+    public func `where`<K: FloatingPoint>(field: String, notEqualTo numericValue: K) -> Results<T> {
+        return self.filter("\(field) != \(numericValue)")
+    }
+    
 	public func `where`(field: String, notEqualTo stringValue: String, caseSensitive: Bool = false) -> Results<T> {
 		
 		if caseSensitive {
@@ -102,18 +113,26 @@ extension Results {
 		return self.filter("\(field) < %@", dateValue)
 	}
 	
-	public func `where`(field: String, lessThan numericValue: AnyNumeric) -> Results<T> {
+    public func `where`<K: Integer>(field: String, lessThan numericValue: K) -> Results<T> {
 		return self.filter("\(field) < \(numericValue)")
 	}
+    
+    public func `where`<K: FloatingPoint>(field: String, lessThan numericValue: K) -> Results<T> {
+        return self.filter("\(field) < \(numericValue)")
+    }
 	
 	//greaterThan
-	public func `where`(field: String, greaterThan dateValue: Date) -> Results<T> {
+    public func `where`(field: String, greaterThan dateValue: Date) -> Results<T> {
 		return self.filter("\(field) > %@", dateValue)
 	}
 	
-	public func `where`(field: String, greaterThan numericValue: AnyNumeric) -> Results<T> {
+    public func `where`<K: Integer>(field: String, greaterThan numericValue: K) -> Results<T> {
 		return self.filter("\(field) > \(numericValue)")
 	}
+    
+    public func `where`<K: FloatingPoint>(field: String, greaterThan numericValue: K) -> Results<T> {
+        return self.filter("\(field) > \(numericValue)")
+    }
 
 }
 #endif

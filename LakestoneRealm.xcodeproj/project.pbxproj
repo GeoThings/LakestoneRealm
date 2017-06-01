@@ -17,11 +17,9 @@
 		1AA0412C1ED6E908009BE875 /* extension_Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA041261ED6E908009BE875 /* extension_Results.swift */; };
 		1AA041301ED6E993009BE875 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0412E1ED6E993009BE875 /* Realm.framework */; };
 		1AA041311ED6E993009BE875 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0412F1ED6E993009BE875 /* RealmSwift.framework */; };
-		1AA041331ED6EA1C009BE875 /* LakestoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA041321ED6EA1C009BE875 /* LakestoneCore.framework */; };
 		1AA041441ED7D715009BE875 /* LakestoneRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA041021ED6E8D0009BE875 /* LakestoneRealm.framework */; };
 		1AA0414A1ED7D72D009BE875 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0412E1ED6E993009BE875 /* Realm.framework */; };
 		1AA0414B1ED7D72D009BE875 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0412F1ED6E993009BE875 /* RealmSwift.framework */; };
-		1AA0414D1ED7D7B1009BE875 /* LakestoneCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0414C1ED7D7B1009BE875 /* LakestoneCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,11 +44,9 @@
 		1AA041261ED6E908009BE875 /* extension_Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_Results.swift; sourceTree = "<group>"; };
 		1AA0412E1ED6E993009BE875 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		1AA0412F1ED6E993009BE875 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
-		1AA041321ED6EA1C009BE875 /* LakestoneCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LakestoneCore.framework; path = ../../LakestoneCore/build/Debug/LakestoneCore.framework; sourceTree = "<group>"; };
 		1AA041351ED6EB23009BE875 /* TestRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRealm.swift; sourceTree = "<group>"; };
 		1AA041361ED6EB23009BE875 /* testUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testUtilities.swift; sourceTree = "<group>"; };
 		1AA0413F1ED7D715009BE875 /* LakestoneRealmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LakestoneRealmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AA0414C1ED7D7B1009BE875 /* LakestoneCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LakestoneCore.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/LakestoneRealm-figehpqsaerbisaoyqzxeimausxf/Build/Products/Debug-iphonesimulator/LakestoneCore.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA041331ED6EA1C009BE875 /* LakestoneCore.framework in Frameworks */,
 				1AA041311ED6E993009BE875 /* RealmSwift.framework in Frameworks */,
 				1AA041301ED6E993009BE875 /* Realm.framework in Frameworks */,
 			);
@@ -68,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA0414D1ED7D7B1009BE875 /* LakestoneCore.framework in Frameworks */,
 				1AA0414A1ED7D72D009BE875 /* Realm.framework in Frameworks */,
 				1AA0414B1ED7D72D009BE875 /* RealmSwift.framework in Frameworks */,
 				1AA041441ED7D715009BE875 /* LakestoneRealm.framework in Frameworks */,
@@ -115,8 +109,6 @@
 		1AA0412D1ED6E993009BE875 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1AA0414C1ED7D7B1009BE875 /* LakestoneCore.framework */,
-				1AA041321ED6EA1C009BE875 /* LakestoneCore.framework */,
 				1AA0412E1ED6E993009BE875 /* Realm.framework */,
 				1AA0412F1ED6E993009BE875 /* RealmSwift.framework */,
 			);
@@ -194,8 +186,7 @@
 				TargetAttributes = {
 					1AA041011ED6E8D0009BE875 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = R9S8X575B6;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					1AA0413E1ED7D715009BE875 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -377,21 +368,21 @@
 		1AA041171ED6E8D0009BE875 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = R9S8X575B6;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.geothings.LakestoneRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -400,21 +391,21 @@
 		1AA041181ED6E8D0009BE875 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = R9S8X575B6;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.geothings.LakestoneRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
@@ -487,6 +478,7 @@
 				1AA041491ED7D715009BE875 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
