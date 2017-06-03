@@ -146,7 +146,6 @@
 				1AA040FE1ED6E8D0009BE875 /* Frameworks */,
 				1AA040FF1ED6E8D0009BE875 /* Headers */,
 				1AA041001ED6E8D0009BE875 /* Resources */,
-				1A738A1C1EE1049200342481 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -232,22 +231,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1A738A1C1EE1049200342481 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cp -r ${BUILT_PRODUCTS_DIR}/LakestoneRealm.framework ${PROJECT_DIR}/../GeoBingAnKit/Frameworks/";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1AA040FD1ED6E8D0009BE875 /* Sources */ = {
