@@ -146,6 +146,7 @@
 				1AA040FE1ED6E8D0009BE875 /* Frameworks */,
 				1AA040FF1ED6E8D0009BE875 /* Headers */,
 				1AA041001ED6E8D0009BE875 /* Resources */,
+				1AA763671EE29FD800478CBB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -231,6 +232,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AA763671EE29FD800478CBB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1AA040FD1ED6E8D0009BE875 /* Sources */ = {
@@ -383,7 +400,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tw.geothings.LakestoneRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -406,7 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = tw.geothings.LakestoneRealm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
