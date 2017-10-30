@@ -15,11 +15,9 @@
 		1AA0412A1ED6E908009BE875 /* extension_Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA041241ED6E908009BE875 /* extension_Query.swift */; };
 		1AA0412B1ED6E908009BE875 /* extension_Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA041251ED6E908009BE875 /* extension_Realm.swift */; };
 		1AA0412C1ED6E908009BE875 /* extension_Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA041261ED6E908009BE875 /* extension_Results.swift */; };
-		1AA041301ED6E993009BE875 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0412E1ED6E993009BE875 /* Realm.framework */; };
-		1AA041311ED6E993009BE875 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0412F1ED6E993009BE875 /* RealmSwift.framework */; };
 		1AA041441ED7D715009BE875 /* LakestoneRealm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA041021ED6E8D0009BE875 /* LakestoneRealm.framework */; };
-		1AA0414A1ED7D72D009BE875 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0412E1ED6E993009BE875 /* Realm.framework */; };
-		1AA0414B1ED7D72D009BE875 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA0412F1ED6E993009BE875 /* RealmSwift.framework */; };
+		801228671FA72F1200A68DEA /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801228651FA72F1100A68DEA /* RealmSwift.framework */; };
+		801228681FA72F1200A68DEA /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 801228661FA72F1100A68DEA /* Realm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +40,11 @@
 		1AA041241ED6E908009BE875 /* extension_Query.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_Query.swift; sourceTree = "<group>"; };
 		1AA041251ED6E908009BE875 /* extension_Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_Realm.swift; sourceTree = "<group>"; };
 		1AA041261ED6E908009BE875 /* extension_Results.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension_Results.swift; sourceTree = "<group>"; };
-		1AA0412E1ED6E993009BE875 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
-		1AA0412F1ED6E993009BE875 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		1AA041351ED6EB23009BE875 /* TestRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestRealm.swift; sourceTree = "<group>"; };
 		1AA041361ED6EB23009BE875 /* testUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testUtilities.swift; sourceTree = "<group>"; };
 		1AA0413F1ED7D715009BE875 /* LakestoneRealmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LakestoneRealmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		801228651FA72F1100A68DEA /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		801228661FA72F1100A68DEA /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA041311ED6E993009BE875 /* RealmSwift.framework in Frameworks */,
-				1AA041301ED6E993009BE875 /* Realm.framework in Frameworks */,
+				801228671FA72F1200A68DEA /* RealmSwift.framework in Frameworks */,
+				801228681FA72F1200A68DEA /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,8 +61,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AA0414A1ED7D72D009BE875 /* Realm.framework in Frameworks */,
-				1AA0414B1ED7D72D009BE875 /* RealmSwift.framework in Frameworks */,
 				1AA041441ED7D715009BE875 /* LakestoneRealm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,8 +105,8 @@
 		1AA0412D1ED6E993009BE875 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1AA0412E1ED6E993009BE875 /* Realm.framework */,
-				1AA0412F1ED6E993009BE875 /* RealmSwift.framework */,
+				801228661FA72F1100A68DEA /* Realm.framework */,
+				801228651FA72F1100A68DEA /* RealmSwift.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";

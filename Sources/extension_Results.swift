@@ -1,4 +1,4 @@
-﻿//
+//
 //  extension_Results.swift
 //  LakestoneRealm
 //
@@ -20,7 +20,8 @@
 
 #if !COOPER
 extension Results {
-	
+	public typealias T = Element
+    
 	public var all: Results<T> {
 		return self
 	}
